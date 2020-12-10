@@ -217,6 +217,8 @@
                     this.User.photo = event.target.files[0];
                     if(!this.User.photo)
                         this.manageBtnActive();
+
+                    this.isActive=false;
                     console.log("U are selecting the file");
                 },
                 saveDataLocal()
