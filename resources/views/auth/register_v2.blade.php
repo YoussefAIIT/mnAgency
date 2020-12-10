@@ -131,6 +131,7 @@
         var app = new Vue({
             el: '#app',
             data: {
+                isActiveBtnNext1:true,
                 isActive:true,
                 message: 'Hello Vue!',
                 errors:[],
@@ -147,7 +148,6 @@
                     alternatecontact:"",
                     photo:"",
                     signaturephoto:"",
-
                 }
             },
             methods:{
@@ -273,7 +273,12 @@
                 previous(){
                     this.manageBtnActive();
                     this.errors=[];
+                },
+                reversebooleanValue( btn)
+                {
+
                 }
+
 
 
             },
@@ -293,7 +298,11 @@
                     this.User.contactno=JSON.parse(localStorage.getItem('User')).contactno;
                     this.User.alternatecontact=data.alternatecontact;
 
-                    this.manageBtnActive();
+//                    this.manageBtnActive();
+
+                    console.log(this.isActive);
+                    this.reversebooleanValue(this.isActive);
+                    console.log(this.isActive);
                 }
                 //this.isActive=false;
 
